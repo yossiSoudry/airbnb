@@ -13,9 +13,9 @@ export interface IListingsParams {
 export default async function getListings(params: IListingsParams) {
   try {
     const {
-      guestCount = 0,
-      roomCount = 0,
-      bathroomCount = 0,
+      guestCount,
+      roomCount,
+      bathroomCount,
       startDate,
       endDate,
       locationValue,
@@ -28,15 +28,15 @@ export default async function getListings(params: IListingsParams) {
       query.category = category;
     }
 
-    if (guestCount) {
+    if (guestCount !== undefined) {
       query.guestCount = { gte: +guestCount };
     }
 
-    if (roomCount) {
+    if (roomCount !== undefined) {
       query.roomCount = { gte: +roomCount };
     }
 
-    if (bathroomCount) {
+    if (bathroomCount !== undefined) {
       query.bathroomCount = { gte: +bathroomCount };
     }
 
