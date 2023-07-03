@@ -1,5 +1,5 @@
 import getCurrentUser from "../actions/getCurrentUser";
-import getListings from "../actions/getListings";
+import getListingsByUserId from "../actions/getListingsByUserId";
 import getReservations from "../actions/getReservations";
 import ClientOnly from "../components/ClientOnly";
 import EmptyState from "../components/EmptyState";
@@ -15,7 +15,7 @@ const PropertiesPage = async () => {
     );
   }
 
-  const listings = await getListings({userId: currentUser.id});
+  const listings = await getListingsByUserId({userId: currentUser.id});
 
   if (listings.length === 0) {
     return (
