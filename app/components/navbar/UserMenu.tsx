@@ -31,7 +31,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
       return loginModal.onOpen()
     }
     rentModal.onOpen()
-  },[currentUser, loginModal])
+  },[currentUser, loginModal, rentModal])
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
